@@ -1,0 +1,62 @@
+@use "sass:color";
+@use '../base/variables' as v;
+
+@mixin btn($bg_color) {
+    display: inline-block;
+    padding: 2rem 3rem;
+    background: $bg_color;
+    border-radius: v.$b_radius;
+    cursor: pointer;
+    transition: opacity 200ms ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+@mixin grid($columnas, $gap) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+@mixin telefono-pequeno {
+    @media (min-width: v.$telefono_pequeno) {
+        @content;
+    }
+}
+
+@mixin telefono-mediano {
+    @media (min-width: v.$telefono_mediano) {
+        @content;
+    }
+}
+
+@mixin telefono-grande {
+    @media (min-width: v.$telefono_grande) {
+        @content;
+    }
+}
+
+@mixin tablet-pequena {
+    @media (min-width: v.$tablet_pequena) {
+        @content;
+    }
+}
+
+@mixin tablet-grande {
+    @media (min-width: v.$tablet_grande) {
+        @content;
+    }
+}
+
+@mixin desktop-mediana {
+    @media (min-width: v.$desktop_mediana) {
+        @content;
+    }
+}
+
+@mixin desktop-grande {
+    @media (min-width: v.$desktop_grande) {
+        @content;
+    }
+}

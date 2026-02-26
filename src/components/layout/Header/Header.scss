@@ -1,0 +1,196 @@
+@use "../../../styles/base/_variables.scss" as v;
+@use "../../../styles/abstracts/mixins" as mx;
+
+.header {
+    @include mx.grid(2, 1rem);
+    margin: 1rem;
+
+    &__logo {
+        max-width: 18rem;
+        background-color: v.$blanco;
+        border-radius: v.$b_radius;
+        padding: 1rem;
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__navigation-wrapper {
+        display: flex;
+        width: 100%;
+        padding-left: 50px;
+        justify-content: flex-end;
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        width: 24px;
+        margin-left: auto;
+    }
+
+    &__burger i {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 13px;
+        transition: v.$transition;
+    }
+
+    &__burger.active i:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+    }
+
+    &__burger.active i:nth-child(2) {
+        opacity: 0;
+    }
+
+    &__burger.active i:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -5px);
+
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .header__navigation-wrapper {
+        padding-left: 25px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .header {
+        min-height: 64px;
+        padding: 0 20px;
+    }
+
+    .header__burger {
+        display: flex;
+    }
+
+    .header__navigation-wrapper {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 110%;
+        left: 0;
+        padding: 20px;
+        background-color: rgba(25, 27, 36, 1);
+        border-radius: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: v.$transition;
+    }
+
+    .header__navigation-wrapper.open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+.navbar {
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    border-radius: v.$b_radius;
+    position: relative;
+    background-color: v.$negro;
+}
+
+.right,
+.left {
+    width: 100%;
+    height: 75vh;
+    border-radius: v.$b_radius;
+}
+
+.left {
+    background-color: v.$primario;
+    background-image: url("../../../assets/img/header.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    border:  2px solid v.$gris;
+
+    &__etiquetas {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        justify-content: center;
+
+
+        p {
+            background-color: v.$primario;
+            color: v.$blanco;
+            border-radius: v.$b_radius;
+            background-color: rgba(128, 108, 232, 0.7);
+            border-radius: 12px;
+            border: 1px solid v.$primario;
+            padding: 1rem;
+        }
+    }
+
+    &__img {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+//  &__flotantes {
+
+//      backdrop-filter: blur(2px) saturate(90%);
+//      -webkit-backdrop-filter: blur(2px) saturate(90%);
+//      background-color: rgba(128, 108, 232, 0.5);
+//      border-radius: 12px;
+//      border: 1px solid rgba(128, 108, 232, 0.7);
+//      display: flex;
+//      color: v.$negro;
+//      justify-content: center;
+//      width: 20rem;
+//      padding: 1rem;
+//  }
+
+//  &__flotantes--item1 {
+//      position: absolute;
+//      left: 10%;
+//      top: 10%;
+//  }
+
+//  &__flotantes--item2 {
+//      position: absolute;
+//      left: 70%;
+//      top: 30%;
+//  }
+
+//  &__flotantes--item3 {
+//      position: absolute;
+//      left: 20%;
+//      top: 80%;
+//  }
+
+//  &__flotantes--item4 {
+//      position: absolute;
+//      left: 70%;
+//      top: 80%;
+//  }

@@ -1,0 +1,131 @@
+@use "../../styles/base/variables" as v;
+
+.navbar__list {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__list-item {
+    display: flex;
+    padding: 30px 0 50px;
+    margin-bottom: -20px;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.navbar__list-item>a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: v.$transition;
+}
+
+.navbar__list-item>a svg path {
+    transition: v.$transition;
+}
+
+.navbar__list-item .submenu-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    left: 0;
+    border-radius: 33px;
+    padding: 30px 30px 50px 30px;
+    background-color: rgba(25, 27, 36, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: v.$transition;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar__list-item:hover .submenu-wrapper {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .navbar__list-item:hover~.navbar__list-item .submenu-wrapper {
+        display: none;
+    }
+
+    .navbar__list-item:hover>a,
+    .navbar__list-item:hover>a svg path {
+        color: v.$primario;
+        fill: v.$primario;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .navbar__list {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .header__navigation,
+    .navbar__list {
+        width: 100%;
+    }
+
+    .navbar__list-item {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+        margin: 0;
+    }
+
+    .navbar__list-item.active a,
+    .navbar__list-item.active a>svg path {
+        fill: v.$primario;
+        color: v.$primario;
+    }
+
+    .navbar__list-item .submenu-wrapper {
+        position: static;
+        padding: 0;
+        max-height: 0;
+        border-radius: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        overflow: hidden;
+        transition: max-height v.$transition;
+    }
+}
+
+.navbar__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    width: max-content;
+    padding: 6px 20px;
+    border-radius: 100px;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: v.$transition;
+    border: 2px solid v.$blanco;
+
+    svg path {
+        stroke: v.$primario;
+    }
+
+    &:hover {
+        color: v.$primario;
+        stroke: v.$primario;
+        border: 2px solid v.$primario;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    .navbar__button {
+        width: 100%;
+    }
+}
