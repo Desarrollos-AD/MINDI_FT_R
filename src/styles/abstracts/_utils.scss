@@ -14,12 +14,21 @@
     margin: -3rem 0 1rem 0 !important;
 }
 
-.subtitulo {
+.titulo {
     border: 2px solid v.$gris;
     margin: 1rem 2rem 1rem 2rem;
     border-radius: v.$b_radius;
 
     h2 {
+        margin: 4rem 0 6rem 0;
+    }
+}
+
+.subtitulo {
+    margin: 1rem 2rem 1rem 2rem;
+    border-radius: v.$b_radius;
+
+    h3 {
         margin: 4rem 0 6rem 0;
     }
 }

@@ -2,17 +2,181 @@
 @use '../../styles/abstracts/mixins' as mx;
 
 .acerca {
-    margin: 5rem 0;
+    margin: 1rem 2rem;
+    border: 2px solid v.$gris;
+    border-radius: v.$b_radius;
 
     &__contenido {
+        margin: 5rem 0;
+        // @include mx.grid(2, 5rem);
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 5rem;
 
-        &--left {
-            h3 {
-                font-size: 10rem;
+        @include mx.telefono-mediano {
+            flex-direction: row;
+        }
+
+        &--left,
+        &--right {
+            flex: 1;
+        }
+
+        &--left {}
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1;
+        }
+
+        p {
+            margin: 2rem 0;
+            text-align: justify;
+        }
+
+        &--right {
+            position: relative;
+            @include mx.sombra;
+        }
+    }
+
+    .valor {
+        margin: 5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include mx.telefono-mediano {
+            flex-direction: row-reverse;
+        }
+
+        &__contenido {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .valor__img {
+            flex: 1;
+            height: 80%;
+            display: flex;
+
+            img {
+                width: 80%;
+                margin: 0 auto;
             }
+        }
+
+        ul {
+            align-items: center;
+            margin: 2rem;
+
+            li {
+                margin: 1rem;
+
+                svg {
+                    padding: 0 1rem;
+                }
+
+            }
+        }
+
+        p {
+            margin: 2rem 0;
+            text-align: justify;
+        }
+    }
+
+    .empresarial {
+        @include mx.grid(1, 0);
+        align-items: center;
+        background-color: v.$negro;
+        color: v.$blanco;
+        border-radius: v.$b_radius;
+
+        @include mx.telefono-mediano {
+            @include mx.grid(2, 0);
+        }
+
+        .valores,
+        .mision,
+        .vision {
+            padding: 2.5rem 0 5rem 0;
+        }
+
+        .valores {
+            border-right: 2px solid v.$blanco;
+            grid-column: 1/2;
+            grid-row: 1/2;
+
+
+            h4 {
+                font-weight: v.$bold;
+                margin-bottom: 5rem;
+            }
+
+            h5 {
+                span {
+                    margin: 0 1rem;
+                }
+            }
+
+            p {
+                margin: 0 5rem;
+
+            }
+
+        }
+
+        .mision,
+        .vision {
+            text-align: justify;
+
+            h4 {
+                font-weight: v.$bold;
+            }
+        }
+
+        .mision {
+            border-top: 2px solid v.$blanco;
+            
+            @include mx.telefono-mediano {
+                border-top: none;
+                border-bottom: 2px solid v.$blanco;
+            }
+        }
+
+    }
+
+}
+
+.separador__flecha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 7rem auto 0 auto;
+    font-weight: v.$delgada;
+    display: flex;
+    flex-direction: column;
+
+    @include mx.telefono-mediano {
+        flex-direction: row;
+    }
+
+    p {
+        font-size: 3rem;
+    }
+
+    span {
+        font-size: 2rem;
+        rotate: 90deg;
+        margin: 2rem 0;
+
+        @include mx.telefono-mediano {
+            rotate: 0deg;
         }
     }
 }

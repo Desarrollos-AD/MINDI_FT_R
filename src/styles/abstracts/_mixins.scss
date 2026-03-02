@@ -8,6 +8,7 @@
     border-radius: v.$b_radius;
     cursor: pointer;
     transition: opacity 200ms ease-out;
+
     &:hover {
         opacity: 0.85;
     }
@@ -58,5 +59,25 @@
 @mixin desktop-grande {
     @media (min-width: v.$desktop_grande) {
         @content;
+    }
+}
+
+@mixin sombra {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 1%;
+        right: 20%;
+        width: 35rem;
+        height: 35rem;
+        z-index: -1;
+        background: linear-gradient(135deg,
+                hsla(250, 73%, 67%, 0.27) 0%,
+                hsla(201, 87%, 52%, 0.27) 100%);
+        border-radius: 50%;
+        filter: blur(60px);
+        box-shadow: 0 0 100px hsla(250, 73%, 67%, 0.4);
+        will-change: filter;
+        pointer-events: none;
     }
 }

@@ -1,9 +1,5 @@
-:root {
-    --card-hover-border-color: #fa0;
-    --card-hover-glow-color: #fa07;
-    --card-shadow-color: #0002;
-    --link-color: #f80;
-}
+@use '../../styles/base/variables' as v;
+@use '../../styles/abstracts/mixins' as mx;
 
 a {
     color: var(--link-color);
@@ -12,20 +8,20 @@ a {
 }
 
 a:visited {
-    color: var(--link-visited-color);
+    color: v.$primario;
 }
 
 a:focus {
-    color: var(--link-focus-color);
+    color: v.$primario;
     outline: none;
 }
 
 a:hover {
-    color: var(--link-hover-color);
+    color: v.$primario;
 }
 
 a:active {
-    color: var(--link-visited-color);
+    color: v.$primario;
 }
 
 .carousel {
@@ -69,19 +65,19 @@ a:active {
     align-items: center;
     width: 315px;
     height: 220px;
-    border: 1px solid var(--card-border-color);
     border-radius: 1rem;
-    box-shadow: 0 2px 0 2px var(--card-shadow-color), 0 0 0 3px #0000;
     text-align: justify;
     -webkit-user-select: none;
     user-select: none;
     transition: border 0.667s, box-shadow 0.333s;
     flex-shrink: 0;
-    padding: 1rem;
     border-radius: 15px;
-    background-color: rgba(255, 254, 254, 0.15);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 254, 254, 0.3);
+
+    img {
+        border-radius: v.$b_radius;
+
+    }
 
     h3 {
         margin: 30px 0;
@@ -90,8 +86,8 @@ a:active {
 
 .valores__card:hover,
 .valores__card:focus-within {
-    border: 2px solid var(--card-hover-border-color);
-    box-shadow: 2px 4px 0 #0000, 0 0 0 6px var(--card-hover-glow-color);
+    border: 2px solid v.$primario;;
+    box-shadow: 2px 4px 0 #0000, 0 0 0 6px v.$primario;;
 }
 
 .titulo {

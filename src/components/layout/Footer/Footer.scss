@@ -1,0 +1,59 @@
+@use '../../../styles/base/variables' as v;
+@use '../../../styles/abstracts/mixins' as mx;
+
+footer {
+    background-color: v.$negro;
+    margin: 1rem 2rem;
+    border-radius: v.$b_radius;
+}
+
+.footer {
+    height: 20rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__right {
+        width: auto;
+
+
+        img {
+            width: 35rem;
+            background-color: v.$blanco;
+            padding: 2rem 3rem;
+            border-radius: 0 0 v.$b_radius v.$b_radius;
+            // border-radius: v.$b_radius;
+        }
+    }
+
+    &__left {
+        text-align: center;
+        padding: 2rem 0;
+
+        .navbar__list {
+            flex-direction: row;
+
+            li {
+                a {
+                    font-size: 1.4rem;
+
+                }
+            }
+        }
+    }
+
+}
+
+.pie {
+    border-top: 2px solid v.$blanco;
+    padding: 2rem;
+    color: v.$blanco;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+        margin: 1.5rem 0;
+    }
+}

@@ -1,28 +1,11 @@
 import { useEffect, useRef } from "react";
-// import validacion from "../assets/img/lista.png";
 import "./Galeria.scss";
 const carouselDuplicates = 1;
 
 const valores = [
-  {
-    name: "Estrategia",
-  },
-  {
-    name: "Creatividad",
-  },
-  {
-    name: "Compromiso",
-  },
-
-  {
-    name: "Confianza",
-  },
-  {
-    name: "Innovación",
-  },
-  {
-    name: "Responsabilidad",
-  },
+  { name: "Servicio", img: "gal_1.jpg" },
+  { name: "Servicio", img: "gal_2.jpg" },
+  { name: "Servicio", img: "gal_3.jpg" },
 ];
 
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -174,15 +157,13 @@ export default function Valores() {
         <div className="carousel-content" ref={contentRef}>
           {valores.map((lang) => (
             <div className="valores__card" key={lang.name}>
-              <div className="titulo">
-                <img
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                //   src={validacion}
-                  alt="Icono validación"
-                />
-              </div>
+              <img
+                loading="lazy"
+                width="800"
+                height="800"
+                src={`/assets/img/${lang.img}`}
+                alt={lang.name}
+              />
             </div>
           ))}
         </div>

@@ -18,7 +18,7 @@ function Servicios() {
   return (
     <>
       <section class="servicios">
-        <div className="subtitulo">
+        <div className="titulo">
           <div className="contenedor">
             <h2>
               <span>Nuestros</span> <br />- Servicios
@@ -364,7 +364,7 @@ function Servicios() {
               <div className="servicio__cinco--right">
                 <div className="servicio__cinco">
                   <div className="right--info">
-                    <div className="servicio_cinco--contenido--img">
+                    <div className="servicio__cinco--contenido--img">
                       <img
                         src={mante_1}
                         alt="Servicio de Mantenimiento Integral"
