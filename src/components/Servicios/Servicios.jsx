@@ -17,7 +17,7 @@ import mante_2 from "../../assets/img/mante_2.jpg";
 function Servicios() {
   return (
     <>
-      <section class="servicios">
+      <section class="servicios" id="servicios">
         <div className="titulo">
           <div className="contenedor">
             <h2>
@@ -27,25 +27,42 @@ function Servicios() {
         </div>
 
         <div className="servicios__cards">
-          <div className="servicios__cards--card">
-            <h4>01</h4>
-            <h3>Arquitectura</h3>
-          </div>
-          <div className="servicios__cards--card">
-            <h4>02</h4>
-            <h3>Ingeniería</h3>
-          </div>
-          <div className="servicios__cards--card">
-            <h4>03</h4>
-            <h3>Tecnología</h3>
-          </div>
-          <div className="servicios__cards--card">
-            <h4>04</h4>
-            <h3>Mantenimiento</h3>
-          </div>
+          <a href="#arquitectura">
+            <div className="servicios__cards--card">
+              <h4>01</h4>
+              <h3>Arquitectura</h3>
+            </div>
+          </a>
+
+          <a href="#ingenieria">
+            <div className="servicios__cards--card">
+              <h4>02</h4>
+              <h3>Ingeniería</h3>
+            </div>
+          </a>
+
+          <a href="#tecnologia">
+            <div className="servicios__cards--card">
+              <h4>03</h4>
+              <h3>Tecnología</h3>
+            </div>
+          </a>
+
+          <a href="#construccion">
+            <div className="servicios__cards--card">
+              <h4>04</h4>
+              <h3>Construcción</h3>
+            </div>
+          </a>
+          <a href="#mantenimiento">
+            <div className="servicios__cards--card">
+              <h4>05</h4>
+              <h3>Mantenimiento</h3>
+            </div>
+          </a>
         </div>
 
-        <section class="slide servicio">
+        <section class="slide servicio" id="arquitectura">
           <div className="contenedor">
             <h2 className="servicio__uno--titulo">
               <span>Servicios de</span> <br />- Arquitectura
@@ -124,7 +141,7 @@ function Servicios() {
           </div>
         </section>
 
-        <section class="slide servicio">
+        <section class="slide servicio" id="ingenieria">
           <div className="contenedor">
             <h2 className="servicio__dos--titulo">
               <span>Servicios de </span> <br />- Ingeniería
@@ -189,7 +206,7 @@ function Servicios() {
           </div>
         </section>
 
-        <section class=" slide servicio ">
+        <section class=" slide servicio" id="tecnologia">
           <div className="contenedor ">
             <h2 className="servicio__tres--titulo">
               <span>Tecnologías de la</span> <br />- Información
@@ -264,7 +281,7 @@ function Servicios() {
           </div>
         </section>
 
-        <section class="slide servicio ">
+        <section class="slide servicio " id="construccion">
           <div className="contenedor servicio__cuatro">
             <h2 className="servicio__cuatro--titulo">
               <span>Servicios de </span> <br />- Construcción
@@ -315,7 +332,7 @@ function Servicios() {
           </div>
         </section>
 
-        <section class="slide servicio">
+        <section class="slide servicio" id="mantenimiento">
           <div className="contenedor">
             <h2 className="servicio__cinco--titulo">
               <span>Mantenimiento</span> <br />- Integral

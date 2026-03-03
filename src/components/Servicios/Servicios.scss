@@ -6,13 +6,26 @@
     @include mx.sombra;
 
     &__cards {
-        display: flex;
-        gap: 1rem;
+        @include mx.grid(1, 1rem);
         margin: 1rem 2rem;
         flex-direction: column;
 
         @include mx.telefono-mediano {
+            @include mx.grid(2, 1rem);
             flex-direction: row;
+        }
+
+        @include mx.desktop-mediana {
+            @include mx.grid(5, 1rem);
+        }
+
+        a{
+            color: v.$negro;
+
+            &:hover{
+                opacity: .5;
+                transition: all .4s ease-in;
+            }
         }
 
         &--card {
@@ -25,13 +38,13 @@
             width: 100%;
 
             h4 {
-                font-size: clamp(13rem, 14vw, 15rem);
+                font-size: clamp(8rem, 10vw, 12rem);
                 font-weight: v.$bold;
                 color: rgb(219, 219, 219);
             }
 
             h3 {
-                font-size: clamp(3.5rem, 4vw, 5rem);
+                font-size: clamp(3rem, 3.5vw, 4rem);
                 font-weight: v.$bold;
                 margin-left: -10rem;
             }
@@ -68,11 +81,11 @@
     }
 
     &__uno {
-        @include mx.grid(1, 1rem);
+        @include mx.grid(1, 2rem);
         color: v.$blanco;
 
-        @include mx.telefono-grande {
-            @include mx.grid(5, 1rem);
+        @include mx.tablet-grande {
+            @include mx.grid(5, 2rem);
         }
 
         &--titulo {
@@ -80,7 +93,7 @@
             margin: 2rem 0;
             grid-column: 1/2;
 
-            @include mx.telefono-grande {
+            @include mx.tablet-grande {
                 grid-column: 1/6;
             }
         }
@@ -88,7 +101,7 @@
         &--contenido {
             grid-column: 1/1;
 
-            @include mx.telefono-grande {
+            @include mx.tablet-grande {
                 grid-column: 1/3;
             }
 
@@ -100,7 +113,7 @@
         }
 
         &--img {
-            @include mx.telefono-grande {
+            @include mx.tablet-grande {
                 grid-column: 3/6;
             }
 
@@ -110,9 +123,9 @@
             margin-top: 5rem;
 
             .uno__contenedor {
-                flex-direction: column;
                 display: flex;
                 gap: 1rem;
+                flex-direction: column;
             }
 
             .uno_img1 {
@@ -130,8 +143,12 @@
             .caja {
                 border: 1px solid v.$blanco;
                 border-radius: v.$b_radius;
-                width: 30rem;
+                width: 20rem;
                 height: 100%;
+
+                @include mx.desktop-mediana {
+                    width: 30rem;
+                }
             }
 
             .caja2 {
@@ -186,11 +203,11 @@
 
         &--img {
             flex: 1;
-            display: none;
             position: relative;
-
+            display: none;
+            
             @include mx.telefono-grande {
-                display: u;
+                display: unset;
             }
 
             &::before {
@@ -199,7 +216,7 @@
                 z-index: -1;
                 width: 100%;
                 display: block;
-                background-color: v.$gris;
+                background-color: v.$negro;
                 bottom: 0;
                 border-radius: v.$b_radius;
                 height: 80rem;
@@ -210,7 +227,6 @@
 
     &__tres {
         color: v.$blanco;
-        background-image: url("../../assets/img/ti_1.png");
         display: flex;
         gap: 5rem;
         height: 80%;
@@ -221,8 +237,8 @@
         }
 
         &--titulo {
-            color: v.$blanco;
             text-align: right;
+            color: v.$primario;
         }
 
         &--contenido {
@@ -258,7 +274,6 @@
         background-size: cover;
         color: v.$blanco;
         height: 100vh;
-        // height: 100vh;
 
         &--contenido {
             background-color: rgba(0, 0, 0, 0.644);
@@ -266,7 +281,12 @@
             border-radius: 0 0 v.$b_radius v.$b_radius;
             padding: 2rem;
             max-height: 30%;
-            // margin: 2rem 0;
+
+            ul{
+                span{
+                    color: v.$secundario;
+                }
+            }
         }
 
         &--titulo {
@@ -274,6 +294,8 @@
             background-color: rgba(0, 0, 0, 0.644);
             padding-bottom: 4rem;
             color: v.$blanco;
+
+            
         }
     }
 
@@ -281,7 +303,7 @@
         color: v.$blanco;
 
         &--titulo {
-            color: v.$blanco;
+            color: v.$primario;
         }
 
         &--right {
@@ -372,7 +394,7 @@
     margin-top: 1rem;
 
     @include mx.telefono-grande {
-        margin-top: 10rem;
+        margin-top: rem;
     }
 
     &--uno {

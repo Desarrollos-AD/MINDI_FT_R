@@ -3,9 +3,12 @@ import "./Galeria.scss";
 const carouselDuplicates = 1;
 
 const valores = [
-  { name: "Servicio", img: "gal_1.jpg" },
-  { name: "Servicio", img: "gal_2.jpg" },
-  { name: "Servicio", img: "gal_3.jpg" },
+  { name: "Servicio", img: "gal_7.jpg" },
+  { name: "Servicio", img: "gal_8.webp" },
+  { name: "Servicio", img: "gal_9.webp" },
+  { name: "Servicio", img: "gal_10.jpg" },
+  { name: "Servicio", img: "gal_11.png" },
+  { name: "Servicio", img: "gal_12.jpg" },
 ];
 
 const lerp = (a, b, t) => a + (b - a) * t;

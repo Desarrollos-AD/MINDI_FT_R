@@ -1,9 +1,21 @@
 import "./Footer.scss";
 import logo from "../../../assets/mindi.png";
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Footer() {
   const anio = new Date().getFullYear();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
@@ -38,28 +50,48 @@ function Footer() {
                     className={`navbar__list-item ${activeSubmenu === 0 ? "active" : ""}`}
                     onClick={() => handleSubmenuClick(0)}
                   >
-                    <a href="#!">Inicio</a>
+                    <button
+                      onClick={() => goToSection("inicio")}
+                      className="nav-link"
+                    >
+                      Inicio
+                    </button>
                   </li>
 
                   <li
                     className={`navbar__list-item ${activeSubmenu === 1 ? "active" : ""}`}
                     onClick={() => handleSubmenuClick(1)}
                   >
-                    <a href="#!">Servicios</a>
+                    <button
+                      onClick={() => goToSection("servicios")}
+                      className="nav-link"
+                    >
+                      Servicios
+                    </button>
                   </li>
 
                   <li
                     className={`navbar__list-item ${activeSubmenu === 2 ? "active" : ""}`}
                     onClick={() => handleSubmenuClick(2)}
                   >
-                    <a href="#!">Sobre Nosotros</a>
+                    <button
+                      onClick={() => goToSection("nosotros")}
+                      className="nav-link"
+                    >
+                      Nosotros
+                    </button>
                   </li>
 
                   <li
                     className={`navbar__button navbar__list-item ${activeSubmenu === 3 ? "active" : ""}`}
                     onClick={() => handleSubmenuClick(3)}
                   >
-                    <a href="#!">Contacto</a>
+                    <button
+                      onClick={() => goToSection("contacto")}
+                      className="nav-link"
+                    >
+                      Contacto
+                    </button>
                   </li>
                 </ul>
               </nav>
@@ -67,9 +99,7 @@ function Footer() {
           </div>
           <div className="pie">
             <p>© {anio} Logística. Todos los derechos reservados.</p>
-            <a href="../../../../public/Aviso de privacidad - MINDI.pdf">
-              Aviso de privacidad
-            </a>
+            <a href="/assets/terminos_condiciones.pdf">Aviso de privacidad</a>
           </div>
         </div>
       </footer>

@@ -1,12 +1,13 @@
 import Inicio from './pages/Inicio'
+import AppRouter from "./router/AppRouter";
 
 function App() {
 
   return (
     <>
-      <Inicio/>
+      <AppRouter />
     </>
-  )
+  );
 }
 
 export default App

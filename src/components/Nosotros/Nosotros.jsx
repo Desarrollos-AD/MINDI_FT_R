@@ -5,13 +5,10 @@ import o1 from "../../assets/img/o1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import trabajador from "../../assets/img/trabajador.png";
-import valores from "../../assets/img/valores.avif";
-
-// import o4 from "../../assets/img/o4.png";
 
 function Nosotros() {
   return (
-    <section>
+    <section id="nosotros">
       <div className="titulo">
         <div className="contenedor">
           <h2>

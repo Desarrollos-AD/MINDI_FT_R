@@ -6,6 +6,8 @@ const valores = [
   { name: "Servicio", img: "gal_1.jpg" },
   { name: "Servicio", img: "gal_2.jpg" },
   { name: "Servicio", img: "gal_3.jpg" },
+  { name: "Servicio", img: "gal_5.jpg" },
+  { name: "Servicio", img: "gal_6.jpg" },
 ];
 
 const lerp = (a, b, t) => a + (b - a) * t;

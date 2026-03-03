@@ -8,7 +8,7 @@ footer {
 }
 
 .footer {
-    height: 20rem;
+    height: 25rem;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -17,19 +17,17 @@ footer {
     &__right {
         width: auto;
 
-
         img {
             width: 35rem;
             background-color: v.$blanco;
             padding: 2rem 3rem;
             border-radius: 0 0 v.$b_radius v.$b_radius;
-            // border-radius: v.$b_radius;
         }
     }
 
     &__left {
         text-align: center;
-        padding: 2rem 0;
+        margin: 4rem;
 
         .navbar__list {
             flex-direction: row;
@@ -42,7 +40,6 @@ footer {
             }
         }
     }
-
 }
 
 .pie {

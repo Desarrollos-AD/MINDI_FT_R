@@ -6,6 +6,11 @@
     border: 2px solid v.$negro;
     border-radius: v.$b_radius;
 
+    &__titulo {
+        margin: 6rem 0;
+        color: v.$negro;
+    }
+
     iframe {
         border: none;
         border-radius: v.$b_radius;
@@ -16,9 +21,9 @@
         align-items: center;
         margin: 2rem 0 2.5rem 0;
         flex-direction: column;
-        gap: 2rem;
+        gap: 5rem;
 
-        @include mx.telefono-mediano {
+        @include mx.telefono-grande {
             margin: 10rem 0 10rem;
             flex-direction: row;
         }
@@ -39,6 +44,9 @@
 
         &__formulario {
             flex: 1;
+            background-color: v.$gris;
+            padding: 2.5rem;
+            border-radius: v.$b_radius;
 
             .form {
                 display: flex;
@@ -53,12 +61,17 @@
                     &--textArea {
                         margin: 1.5rem 0;
                         width: 100%;
+
+                        input {
+                            color: v.$blanco;
+                        }
                     }
 
                     &--textArea {
                         textarea {
                             height: 24rem;
                             font-size: 1.5rem;
+                            color: v.$blanco;
                         }
                     }
                 }
@@ -69,7 +82,7 @@
                     width: 100%;
                     padding: 1rem;
                     border-radius: .5rem;
-                    background-color: rgba(161, 161, 161, 0.3);
+                    background-color: rgba(116, 116, 116, 0.3);
                     font-weight: bold;
                 }
 

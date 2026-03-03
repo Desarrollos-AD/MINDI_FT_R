@@ -157,17 +157,17 @@
     justify-content: space-between;
     align-items: center;
     max-width: 90%;
-    margin: 7rem auto 0 auto;
+    margin: 5rem auto 0 auto;
     font-weight: v.$delgada;
     display: flex;
     flex-direction: column;
 
-    @include mx.telefono-mediano {
+    @include mx.tablet-pequena {
         flex-direction: row;
     }
 
     p {
-        font-size: 3rem;
+        font-size: clamp(2rem, 2.5vw, 3rem);
     }
 
     span {
@@ -175,7 +175,7 @@
         rotate: 90deg;
         margin: 2rem 0;
 
-        @include mx.telefono-mediano {
+        @include mx.tablet-pequena {
             rotate: 0deg;
         }
     }

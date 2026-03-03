@@ -1,7 +1,19 @@
 import "./Nav.scss";
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Nav() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const handleSubmenuClick = (index) => {
@@ -28,30 +40,36 @@ function Nav() {
           className={`navbar__list-item ${activeSubmenu === 0 ? "active" : ""}`}
           onClick={() => handleSubmenuClick(0)}
         >
-          <a href="#!">Inicio</a>
+          <button onClick={() => goToSection("inicio")} className="nav-link">
+            Inicio
+          </button>
         </li>
 
         <li
           className={`navbar__list-item ${activeSubmenu === 1 ? "active" : ""}`}
           onClick={() => handleSubmenuClick(1)}
         >
-          <a href="#!">Servicios</a>
+          <button onClick={() => goToSection("servicios")} className="nav-link">
+            Servicios
+          </button>
         </li>
 
         <li
           className={`navbar__list-item ${activeSubmenu === 2 ? "active" : ""}`}
           onClick={() => handleSubmenuClick(2)}
         >
-          <a href="#!">Sobre Nosotros</a>
+          <button onClick={() => goToSection("nosotros")} className="nav-link">
+            Nosotros
+          </button>
         </li>
 
         <li
           className={`navbar__button navbar__list-item ${activeSubmenu === 3 ? "active" : ""}`}
           onClick={() => handleSubmenuClick(3)}
         >
-          <a href="#!">
+          <button onClick={() => goToSection("contacto")} className="nav-link">
             Contacto <ArrowIcon />
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

@@ -41,9 +41,9 @@ function Contacto() {
   };
 
   return (
-    <section className="contacto">
+    <section className="contacto" id="contacto">
       <div className="contenedor">
-        <h2 className="servicio__dos--titulo">Contáctenos</h2>
+        <h2 className="contacto__titulo">Contáctenos</h2>
 
         <div className="informacion">
           <div className="informacion__contenido">

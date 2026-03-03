@@ -25,33 +25,31 @@ function Header() {
   }, []);
   return (
     <>
-      <header className="header">
+      <header className="header" id="inicio">
         <div className="navbar">
-          <div className="contenedor">
-            <div className="header__wrapper">
-              <a
-                href="https://bato.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="header__logo"
-              >
-                <img loading="lazy" src={logo} alt="Logo Mindi" />
-              </a>
+          <div className="header__wrapper">
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header__logo"
+            >
+              <img loading="lazy" src={logo} alt="Logo Mindi" />
+            </a>
 
-              <div
-                className={`header__navigation-wrapper ${menuOpen ? "open" : ""}`}
-              >
-                <Nav />
-              </div>
+            <div
+              className={`header__navigation-wrapper ${menuOpen ? "open" : ""}`}
+            >
+              <Nav />
+            </div>
 
-              <div
-                className={`header__burger ${menuOpen ? "active" : ""}`}
-                onClick={toggleMenu}
-              >
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
+            <div
+              className={`header__burger ${menuOpen ? "active" : ""}`}
+              onClick={toggleMenu}
+            >
+              <i></i>
+              <i></i>
+              <i></i>
             </div>
           </div>
         </div>
@@ -76,23 +74,6 @@ function Header() {
           </div>
         </div>
       </header>
-      {/* 
-      <section>
-        <div className="contenedor">
-          <div className="left__flotantes left__flotantes--item1">
-            <p>Ingeniería</p>
-          </div>
-          <div className="left__flotantes left__flotantes--item2">
-            <p>Arquitectura </p>
-          </div>
-          <div className="left__flotantes left__flotantes--item3">
-            <p>Tecnología </p>
-          </div>
-          <div className="left__flotantes left__flotantes--item4">
-            <p>Mantenimiento</p>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }
